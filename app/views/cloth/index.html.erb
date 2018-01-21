@@ -11,8 +11,8 @@
     <div id="container">
         <div id="home-navbar">
             <div id="logo-button">
-                <div id="logo-icon">
-                    <img class="logo-icon" src="assets/img/logo-icon.jpg" height="50px" width="50px">
+                <div id="logo-redirect">
+                    <a href="index.html"> <img class="logo-icon" src="./../assets/../img/logo-icon.jpg" height="50px" width="50px"> </a>
                 </div>
             </div>
             <div id="navbar-search-tile">
@@ -25,18 +25,36 @@
             </div>
             <div id="navbar-content">
                 <div class="drop-down-tile">
-                    <a href='/search/Mens' class="drop-down-text">
+                    <div class="drop-down-text">
                         Men
-                    </a>
+                    </div>
+                    <div id="men-drop-down">
+                      <a href="/search/Shirts" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                      <a href="/search/Pants" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                      <a href="/search/Suits" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Suits </div> </div> </a>
+                      <a href="/search/Mens" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
                 </div>
                 <div class="drop-down-tile">
-                    <a href="/search/Womens" class="drop-down-text">
+                    <div class="drop-down-text">
                         Women
-                    </a>
+                    </div>
+                    <div id="women-drop-down">
+                      <a href="/search/Shirts" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                      <a href="/search/Pants" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                      <a href="/search/Suits" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Suits </div> </div> </a>
+                      <a href="/search/Womens" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
                 </div>
                 <div class="drop-down-tile">
                     <div class="drop-down-text">
                         Account
+                    </div>
+                    <div id="account-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Profile </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Purchases </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Settings </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Log Out </div> </div> </a>
                     </div>
                 </div>
             </div>
@@ -55,7 +73,7 @@
                 </div>
                 <div class="splash-tile">
                     <div id="one-liner">
-                        Witty one-liner
+                        Fashion at Your Fingertips
                     </div>
                 </div>
                 <div id="splash-search-tile">
@@ -66,6 +84,9 @@
                         <input id="splash-search-query" type="text" placeholder="Search here...">
                     </div>
                 </div>
+                <div id="breakpoint">
+
+                </div>
             </div>
         </div>
         <div id="content-wrapper">
@@ -75,7 +96,11 @@
                 </div>
                 <div class="carousel-row">
                   <%@AllClothes.each do |clothing|%>
-                    <a href="/show/<%=clothing.id%>" class="carousel-item"> <img src="<%=clothing.imagelink%>"> </a>
+                    <a class="carousel-item" style="text-decoration: none;" href="/show/<%=clothing.id%>">
+                        <div class="item-img"> <img src="<%=clothing.imagelink%>"> </div>
+                        <div class="item-description"> <%=clothing.apparel%> </div>
+                        <div class="item-price"> <%=clothing.price%>/day </div>
+                    </a>
                   <%end%>
                 </div>
             </div>
@@ -85,10 +110,41 @@
                 </div>
                 <div class="carousel-row">
                   <%@Recent.each do |newest|%>
-                    <a href="/show/<%=newest.id%>" class="carousel-item"> <img src="<%=newest.imagelink%>"> </a>
+                    <a class="carousel-item" style="text-decoration: none;" href="/show/<%=newest.id%>">
+                        <div class="item-img"> <img src="<%=newest.imagelink%>"> </div>
+                        <div class="item-description"> <%=newest.apparel%> </div>
+                        <div class="item-price"> <%=newest.price%> </div>
+                    </a>
                   <%end%>
                 </div>
             </div>
+            <!-- <div class="carousel-wrapper">
+                <div class="carousel-name">
+                    Hidden Gems
+                </div>
+                <div class="carousel-row">
+                    <a class="carousel-item" style="text-decoration: none;" href="#">
+                        <div class="item-img"> <img src="assets/img/pants.jpg"> </div>
+                        <div class="item-description"> *Clothes Name* </div>
+                        <div class="item-price"> *Clothes Price* </div>
+                    </a>
+                    <a class="carousel-item" style="text-decoration: none;" href="#">
+                        <div class="item-img"> <img src="assets/img/pants.jpg"> </div>
+                        <div class="item-description"> *Clothes Name* </div>
+                        <div class="item-price"> *Clothes Price* </div>
+                    </a>
+                    <a class="carousel-item" style="text-decoration: none;" href="#">
+                        <div class="item-img"> <img src="assets/img/pants.jpg"> </div>
+                        <div class="item-description"> *Clothes Name* </div>
+                        <div class="item-price"> *Clothes Price* </div>
+                    </a>
+                    <a class="carousel-item" style="text-decoration: none;" href="#">
+                        <div class="item-img"> <img src="assets/img/pants.jpg"> </div>
+                        <div class="item-description"> *Clothes Name* </div>
+                        <div class="item-price"> *Clothes Price* </div>
+                    </a>
+                </div>
+            </div> -->
         </div>
     </div>
 </body>

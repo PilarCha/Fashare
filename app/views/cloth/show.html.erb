@@ -1,21 +1,20 @@
-<DOCTYPE html>
 
+<!DOCTYPE html>
 <html>
 
 <head>
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/styleSearch.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-icon.jpg"/>
 	<title> NAME OF CLOTHING </title>
 </head>
 
 <body>
-    <body>
     <div id="container">
         <div id="home-navbar">
             <div id="logo-button">
-                <a href='/index' id="logo-icon">
-                    <img src="assets/img/logo-icon.jpg" height="50px" width="50px">
-                </a>
+                <div id="logo-redirect">
+                    <a href="/"> <img class="logo-icon" src="assets/img/logo-icon.jpg" height="50px" width="50px"> </a>
+                </div>
             </div>
             <div id="navbar-search-tile">
                 <div id="navbar-search-box">
@@ -27,18 +26,36 @@
             </div>
             <div id="navbar-content">
                 <div class="drop-down-tile">
-                    <a href="/search/Mens" class="drop-down-text">
+                    <div class="drop-down-text">
                         Men
-                    </a>
+                    </div>
+                    <div id="men-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Suits </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
                 </div>
                 <div class="drop-down-tile">
-                    <a href="/search/Womens" class="drop-down-text">
+                    <div class="drop-down-text">
                         Women
-                    </a>
+                    </div>
+                    <div id="women-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Dresses </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
                 </div>
                 <div class="drop-down-tile">
                     <div class="drop-down-text">
                         Account
+                    </div>
+                    <div id="account-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Profile </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Purchases </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Settings </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Log Out </div> </div> </a>
                     </div>
                 </div>
             </div>
@@ -50,45 +67,42 @@
         </div>
     </div>
 
-<div id="search-text">
-</div>
-
-<div id="selected-background">
-    <div id="selected-cloth">
-    </div>
-</div>
-
-<div id="selected-general">
-
-    <div id="selected-full-desc">
-        <img src="<%=@Item.imagelink%>"; id="selected">
-        <div id="selected-desc">
-            <p id="type">Gender: <%=@Item.gender%> </p><br/>
-            <p id="type">Apparel Type: <%=@Item.apparel%> </p><br/>
-            <p id="type">Size: <%=@Item.size%> </p><br/>
-            <p id="type"> Price: <%=@Item.price%> </p><br/>
+    <div id="selected-container">
+        <div class="carousel-name"> <%=@Item.apparel%> </div>
+        <div id="selected-content">
+            <div id="selected-img"> <img src="<%=@Item.imagelink%>"> </div>
+            <div id="selected-description">
+                <div id="column1">
+                    <div class="description-tile">
+                        <div class="description-category"> Name </div>
+                        <div class="description-answer"> <%=@Item.apparel%> </div>
+                    </div>
+                    <div class="description-tile">
+                        <div class="description-category"> Size </div>
+                        <div class="description-answer"> <%=@Item.size%> </div>
+                    </div>
+                    <div class="description-tile">
+                        <div class="description-category"> Owner </div>
+                        <div class="description-answer"> Bob Test </div>
+                    </div>
+                    <div class="purchase">
+                        <div id="add-to-cart"> <div class="text"> Add to Cart </div> </div>
+                    </div>
+                </div>
+                <div id="column2">
+                    <div class="description-tile">
+                        <div id="price"> <%=@Item.price%>/day</div>
+                    </div>
+                    <div class="purchase">
+                        <div id="contact-owner"> <div class="text"> Contact Owner </div> </div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    <div id="selected-arrival">
-        <form action="/action_page.php">
-            <p id="type">Date Requested: <input type="text" name="date-requested"> <br/>
-            Date Returning: <input type="text" name="date-returning"></p>
-        </form>
     </div>
-</div>
-
-
-
-<div id="selected-background-2">
-    <div id="like-cloth">
-        <p style="text-align: left"> Other Clothes You May Like </p>
-    </div>
-</div>
-
 </body>
 
-
-
-<script type="text/javascript" src="assets/js/script.js"> </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
 
 </html>

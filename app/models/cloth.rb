@@ -3,7 +3,7 @@ def self.search(search)
   if search
     where('gender LIKE ?', "#{search}")
   else
-    find(:all)
+    where(:all)
   end
 end
 end

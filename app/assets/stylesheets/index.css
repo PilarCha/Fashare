@@ -28,7 +28,7 @@ img {
     width: 80px;
 }
 
-#logo-icon {
+#logo-redirect {
     margin: 15px;
     height: 50px;
     width: 50px;
@@ -99,13 +99,13 @@ img {
     height: 100%;
     width: 30%;
 
-    transition: 0.3s;
+    transition: 0s;
 }
 
 .drop-down-tile:hover {
     background-color: #d0d0d0;
 
-    transition: 0.3s;
+    transition: 0s;
 }
 
 .drop-down-text {
@@ -117,6 +117,103 @@ img {
     font-family: 'Lato', sans-serif;
     font-size: 25px;
     color: black;
+}
+
+#men-drop-down {
+    position: absolute;
+    top: 80px;
+    height: 220px;
+    width: 100%;
+
+    background-color: #d0d0d0;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.drop-down-tile:hover #men-drop-down {
+    display: block;
+
+    visibility: visible; /* shows sub-menu */
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+.drop-drop-down-tile {
+    height: 55px;
+    width: 100%;
+}
+
+.drop-drop-down-tile:hover {
+    background-color: #bcbcbc;
+
+    transition: 0.3s;
+}
+
+.drop-drop-down-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+#women-drop-down {
+    position: absolute;
+    top: 80px;
+    height: 220px;
+    width: 100%;
+
+    background-color: #d0d0d0;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.drop-down-tile:hover #women-drop-down {
+    display: block;
+
+    visibility: visible; /* shows sub-menu */
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+#account-drop-down {
+    position: absolute;
+    top: 80px;
+    height: 220px;
+    width: 100%;
+
+    background-color: #d0d0d0;
+
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.drop-down-tile:hover #account-drop-down {
+    display: block;
+
+    visibility: visible; /* shows sub-menu */
+    opacity: 1;
+    z-index: 1;
+    transform: translateY(0%);
+    transition-delay: 0s, 0s, 0.3s;
 }
 
 #cart-button {
@@ -144,8 +241,6 @@ img {
     top: 80px;
     height: 66%;
     width: 100%;
-
-    border-bottom: 1px solid black;
 }
 
 #splash-content {
@@ -168,7 +263,7 @@ img {
     transform: translateY(-50%) skew(-5deg, 0deg);
     text-align: center;
 
-    font-size: 75px;
+    font-size: 90px;
     font-family: 'URW Chancery L', cursive;
     color: #ff3f47;
 }
@@ -226,6 +321,13 @@ img {
     border: 0;
 }
 
+#breakpoint {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 20px;
+}
+
 #content-wrapper {
     position: absolute;
     top: calc(66% + 80px);
@@ -236,7 +338,7 @@ img {
 }
 
 .carousel-wrapper {
-    height: 350px;
+    height: 470px;
     width: 100%;
 }
 
@@ -250,7 +352,8 @@ img {
 }
 
 .carousel-row {
-    height: 300px;
+    margin-top: 20px;
+    height: 370px;
     width: 100%;
     display: flex;
 }
@@ -258,4 +361,187 @@ img {
 .carousel-item {
     flex-grow: 1;
     padding: 15px;
+}
+
+.item-img {
+    height: 270px;
+    width: 100%;
+}
+
+.item-description {
+    height: 33px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    color: black;
+}
+
+.item-price {
+    height: 33px;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 23px;
+    color: #ff3f47;
+}
+
+input:focus {
+    outline: 0;
+}
+
+#after-search-container {
+    position: absolute;
+    top: 80px;
+    height: 1000px;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#after-carousel-wrapper {
+    margin-top: 20px;
+    height: 1250px;
+    width: 100%;
+}
+
+#selected-container {
+    position: absolute;
+    top: 80px;
+    height: calc(100% - 120px);
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+#selected-content {
+    height: calc(100% - 90px);
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#selected-img {
+    float: left;
+    height: 100%;
+    width: 30%;
+}
+
+#selected-description {
+    float: left;
+    position: relative;
+    left: 10%;
+    height: 100%;
+    width: 60%;
+}
+
+#column1 {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+#column2 {
+    float: left;
+    height: 100%;
+    width: 50%;
+}
+
+.description-tile {
+    height: 90px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.description-category {
+    height: 30px;
+    width: 100%;
+    padding-bottom: 10px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: black;
+}
+
+.description-answer {
+    height: 24px;
+    width: 100%;
+    padding-top: 6px;
+    padding-bottom: 20px;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: black;
+}
+
+#description-price {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: #ff3f47;
+}
+
+.purchase {
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    width: 50%;
+}
+
+#add-to-cart {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 90%;
+    width: 75%;
+
+    background-color: #ff3f47;
+}
+
+#add-to-cart:hover {
+    cursor: pointer;
+}
+
+#contact-owner {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 90%;
+    width: 75%;
+
+    background-color: #ff3f47;
+}
+
+#contact-owner:hover {
+    cursor: pointer;
+}
+
+#price {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-family: 'Lato', sans-serif;
+    font-size: 30px;
+    color: #ff3f47;
+}
+
+.text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    color: #F5F5F5;
 }

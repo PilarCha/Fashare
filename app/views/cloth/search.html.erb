@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!-- <DOCTYPE html>
 
 <html>
 
@@ -55,13 +55,103 @@
 </div>
 
 <div id="search-results">
-  <%@Results.each do |result|%>
-  <a href="/show/<%=result.id%>"> <img src="<%=result.imagelink%>"> </a>
-  <%end%>
+
 </div>
 
 
 
 </body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-icon.jpg"/>
+    <title> Search Results </title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="home-navbar">
+            <div id="logo-button">
+                <div id="logo-redirect">
+                    <a href="/index"> <img class="logo-icon" src="assets/img/logo-icon.jpg" height="50px" width="50px"> </a>
+                </div>
+            </div>
+            <div id="navbar-search-tile">
+                <div id="navbar-search-box">
+                    <div id="navbar-search-icon">
+                        <img src="assets/img/search-icon.png" height="30px" width="30px">
+                    </div>
+                    <input id="navbar-search-query" type="text" placeholder="Search here...">
+                </div>
+            </div>
+            <div id="navbar-content">
+                <div class="drop-down-tile">
+                    <div class="drop-down-text">
+                        Men
+                    </div>
+                    <div id="men-drop-down">
+                        <a href="/search/Shirts" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                        <a href="/search/Pants" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                        <a href="/search/Suits" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Suits </div> </div> </a>
+                        <a href="/search/Mens" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
+                </div>
+                <div class="drop-down-tile">
+                    <div class="drop-down-text">
+                        Women
+                    </div>
+                    <div id="women-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Shirts </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Pants </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Dresses </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> All Categories </div> </div> </a>
+                    </div>
+                </div>
+                <div class="drop-down-tile">
+                    <div class="drop-down-text">
+                        Account
+                    </div>
+                    <div id="account-drop-down">
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Profile </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Purchases </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Settings </div> </div> </a>
+                        <a href="#" style="text-decoration: none;"> <div class="drop-drop-down-tile"> <div class="drop-drop-down-text"> Log Out </div> </div> </a>
+                    </div>
+                </div>
+            </div>
+            <div id="cart-button">
+                <div id="cart-icon">
+                    <img src="assets/img/cart-icon.png" height="50px" width="50px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="after-search-container">
+        <div id="after-carousel-wrapper">
+            <div class="carousel-name">
+                Results for <%=@term%>
+            </div>
+            <div class="carousel-row">
+							<%@Results.each do |result|%>
+							<a href="/show/<%=result.id%>" style="text-decoration: none;">
+								<img src="<%=result.imagelink%>">
+								<div class="item-description"> <%=result.apparel%> </div>
+								<div class="item-price"> <%=result.price%>/day </div>
+							</a>
+							<%end%>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
 
 </html>
