@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo-icon.jpg"/>
+    <title> Fashare </title>
+</head>
+
+<body>
+    <div id="container">
+        <div id="home-navbar">
+            <div id="logo-button">
+                <div id="logo-icon">
+                    <img class="logo-icon" src="assets/img/logo-icon.jpg" height="50px" width="50px">
+                </div>
+            </div>
+            <div id="navbar-search-tile">
+                <div id="navbar-search-box">
+                    <div id="navbar-search-icon">
+                        <img src="assets/img/search-icon.png" height="30px" width="30px">
+                    </div>
+                    <input id="navbar-search-query" type="text" placeholder="Search here...">
+                </div>
+            </div>
+            <div id="navbar-content">
+                <div class="drop-down-tile">
+                    <a href='/search/Mens' class="drop-down-text">
+                        Men
+                    </a>
+                </div>
+                <div class="drop-down-tile">
+                    <a href="/search/Womens" class="drop-down-text">
+                        Women
+                    </a>
+                </div>
+                <div class="drop-down-tile">
+                    <div class="drop-down-text">
+                        Account
+                    </div>
+                </div>
+            </div>
+            <div id="cart-button">
+                <div id="cart-icon">
+                    <img src="assets/img/cart-icon.png" height="50px" width="50px">
+                </div>
+            </div>
+        </div>
+        <div id="splash-background">
+            <div id="splash-content">
+                <div class="splash-tile">
+                    <div id="company-name">
+                        Fashare
+                    </div>
+                </div>
+                <div class="splash-tile">
+                    <div id="one-liner">
+                        Witty one-liner
+                    </div>
+                </div>
+                <div id="splash-search-tile">
+                    <div id="splash-search-box">
+                        <div id="splash-search-icon">
+                            <img src="assets/img/search-icon.png" height="50px" width="50px">
+                        </div>
+                        <input id="splash-search-query" type="text" placeholder="Search here...">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content-wrapper">
+            <div class="carousel-wrapper">
+                <div class="carousel-name">
+                    Most Popular
+                </div>
+                <div class="carousel-row">
+                  <%@AllClothes.each do |clothing|%>
+                    <a href="/show/<%=clothing.id%>" class="carousel-item"> <img src="<%=clothing.imagelink%>"> </a>
+                  <%end%>
+                </div>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel-name">
+                    Recently Added
+                </div>
+                <div class="carousel-row">
+                  <%@Recent.each do |newest|%>
+                    <a href="/show/<%=newest.id%>" class="carousel-item"> <img src="<%=newest.imagelink%>"> </a>
+                  <%end%>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+</html>

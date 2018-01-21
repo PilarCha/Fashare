@@ -1,0 +1,25 @@
+
+<form action="/cloth" method="post">
+  <input type = 'hidden' name = "authenticity_token" value = "<%=form_authenticity_token%>">
+  <label>Apparel</label>
+  <select name="cloth[apparel]">
+    <option value="shirts">Shirts</option>
+    <option value="shorts">Shorts</option>
+    <option value="shoes">Shoes</option>
+    <option value="pants">Pants</option>
+    <option value="dress">Dress</option>
+</select><br>
+  <label>Gender</label>
+  <select name="cloth[gender]">
+    <option value="Womens">Women's</option>
+    <option value="Mens">Men's</option>
+  </select> <br>
+  <label>Size</label>
+  <input type="text" name="cloth[size]"><br>
+  <label>Price</label>
+  <input type="number" name="cloth[price]" placeholder="1.00" step="0.10" min="0" max="10.00"><br>
+  <label>imagelink</label>
+  <input type="text" name="cloth[imagelink]" >
+  <li><input type="submit" value="Create new CLoth" /></li>
+
+</form>

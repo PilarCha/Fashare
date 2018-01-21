@@ -1,0 +1,67 @@
+<DOCTYPE html>
+
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/styleSearch.css">
+	<title> Search Results </title>
+</head>
+
+<body>
+    <body>
+    <div id="container">
+        <div id="home-navbar">
+            <div id="logo-button">
+                <a href="/index" id="logo-icon">
+                    <img src="assets/img/logo-icon.jpg" height="50px" width="50px">
+                </a>
+            </div>
+            <div id="navbar-search-tile">
+                <div id="navbar-search-box">
+                    <div id="navbar-search-icon">
+                        <img src="assets/img/search-icon.png" height="30px" width="30px">
+                    </div>
+                    <input id="navbar-search-query" type="text" placeholder="Search here...">
+                </div>
+            </div>
+            <div id="navbar-content">
+                <div class="drop-down-tile">
+                    <a href="/search/Mens" class="drop-down-text">
+                        Men
+                    </a>
+                </div>
+                <div class="drop-down-tile">
+                    <a href="/search/Womens" class="drop-down-text">
+                        Women
+                    </a>
+                </div>
+                <div class="drop-down-tile">
+                    <div class="drop-down-text">
+                        Account
+                    </div>
+                </div>
+            </div>
+            <div id="cart-button">
+                <div id="cart-icon">
+                    <img src="assets/img/cart-icon.png" height="50px" width="50px">
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div id="search-text">
+    Search Results for <%=@term%>:
+</div>
+
+<div id="search-results">
+  <%@Results.each do |result|%>
+  <a href="/show/<%=result.id%>"> <img src="<%=result.imagelink%>"> </a>
+  <%end%>
+</div>
+
+
+
+</body>
+
+</html>
